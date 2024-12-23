@@ -21,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-env = environ.Env(DEBUG=(bool, False))
-environ.Env.read_env(os.path.join(BASE_DIR), '.env')
+env = environ.Env()
+environ.Env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY','django-insecure-gorhgq1m8f)e_r7ib(^q84w*i+0_gj$*^p@7&#p!%9-*=b&jp2')
+SECRET_KEY = env('SECRET_KEY',default='django-insecure-gorhgq1m8f)e_r7ib(^q84w*i+0_gj$*^p@7&#p!%9-*=b&jp2')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'drf_yasg',
+    'listings.apps.ListingsConfig'
 ]
 
 MIDDLEWARE = [

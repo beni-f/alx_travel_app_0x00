@@ -1,3 +1,4 @@
+# Create your models here.
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -40,4 +41,3 @@ class Review(models.Model):
         Booking,
         on_delete=models.CASCADE
     )
-    
